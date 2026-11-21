@@ -1,0 +1,155 @@
+opentheory 1.4 (release 20230321)
+SHA-256 1681f6e68aad9bca213829f57601aeb2f28015edda46d7bee92026f438338c75
+Article version 6
+Exported sequents also required as assumptions: 0
+
+Raw article command counts
+absTerm	67
+absThm	21
+appTerm	306
+appThm	99
+assume	16
+axiom	10
+betaConv	47
+cons	791
+const	9
+constTerm	22
+deductAntisym	97
+def	1085
+eqMp	159
+integer literal	2281
+name literal	47
+nil	532
+opType	28
+ref	1195
+refl	47
+subst	105
+sym	14
+thm	3
+trans	36
+typeOp	3
+var	24
+varTerm	20
+varType	2
+version	1
+
+Reference checker result
+3 external type operators: -> bool HOL4.list.list
+9 external constants: = HOL4.bool.! HOL4.bool./\ HOL4.bool.T
+  HOL4.list.APPEND HOL4.list.CONS HOL4.list.NIL HOL4.list.REVERSE
+  HOL4.min.==>
+10 assumptions:
+  (1) |- HOL4.bool.T
+  (2)
+    |- HOL4.bool.!
+         (\(t : bool). HOL4.bool.! (\(x : A). (t : bool)) <=> (t : bool))
+  (3)
+    |- HOL4.bool.!
+         (\(t : A -> B). (\(x : A). (t : A -> B) (x : A)) = (t : A -> B))
+  (4)
+    |- HOL4.bool.! =
+       \(P : A -> bool). (P : A -> bool) = \(x : A). HOL4.bool.T
+  (5) |- HOL4.bool.! (\(x : A). (x : A) = (x : A) <=> HOL4.bool.T)
+  (6)
+    |- HOL4.min.==> =
+       \(p : bool) (q : bool).
+         HOL4.bool./\ (p : bool) (q : bool) <=> (p : bool)
+  (7)
+    |- HOL4.bool./\ =
+       \(p : bool) (q : bool).
+         (\(f : bool -> bool -> bool).
+            (f : bool -> bool -> bool) (p : bool) (q : bool)) =
+         \(f : bool -> bool -> bool).
+           (f : bool -> bool -> bool) HOL4.bool.T HOL4.bool.T
+  (8)
+    |- HOL4.bool.!
+         (\(P : A HOL4.list.list -> bool).
+            HOL4.min.==>
+              (HOL4.bool./\ ((P : A HOL4.list.list -> bool) HOL4.list.NIL)
+                 (HOL4.bool.!
+                    (\(t : A HOL4.list.list).
+                       HOL4.min.==>
+                         ((P : A HOL4.list.list -> bool)
+                            (t : A HOL4.list.list))
+                         (HOL4.bool.!
+                            (\(h : A).
+                               (P : A HOL4.list.list -> bool)
+                                 (HOL4.list.CONS (h : A)
+                                    (t : A HOL4.list.list)))))))
+              (HOL4.bool.!
+                 (\(l : A HOL4.list.list).
+                    (P : A HOL4.list.list -> bool)
+                      (l : A HOL4.list.list))))
+  (9)
+    |- HOL4.bool./\ (HOL4.list.REVERSE HOL4.list.NIL = HOL4.list.NIL)
+         (HOL4.bool.!
+            (\(h : A).
+               HOL4.bool.!
+                 (\(t : A HOL4.list.list).
+                    HOL4.list.REVERSE
+                      (HOL4.list.CONS (h : A) (t : A HOL4.list.list)) =
+                    HOL4.list.APPEND
+                      (HOL4.list.REVERSE (t : A HOL4.list.list))
+                      (HOL4.list.CONS (h : A) HOL4.list.NIL))))
+  (10)
+    |- HOL4.bool./\
+         (HOL4.bool.!
+            (\(l : A HOL4.list.list).
+               HOL4.list.APPEND HOL4.list.NIL (l : A HOL4.list.list) =
+               (l : A HOL4.list.list)))
+         (HOL4.bool.!
+            (\(l1 : A HOL4.list.list).
+               HOL4.bool.!
+                 (\(l2 : A HOL4.list.list).
+                    HOL4.bool.!
+                      (\(h : A).
+                         HOL4.list.APPEND
+                           (HOL4.list.CONS (h : A) (l1 : A HOL4.list.list))
+                           (l2 : A HOL4.list.list) =
+                         HOL4.list.CONS (h : A)
+                           (HOL4.list.APPEND (l1 : A HOL4.list.list)
+                              (l2 : A HOL4.list.list))))))
+3 theorems:
+  {(1) (2) (3) (4) (5) (6) (7) (8) (10)}
+    |- HOL4.bool.!
+         (\(l : A HOL4.list.list).
+            HOL4.list.APPEND (l : A HOL4.list.list) HOL4.list.NIL =
+            (l : A HOL4.list.list))
+  {(1) (2) (3) (4) (5) (6) (7) (8) (9) (10)}
+    |- HOL4.bool.!
+         (\(l1 : A HOL4.list.list).
+            HOL4.bool.!
+              (\(l2 : A HOL4.list.list).
+                 HOL4.list.REVERSE
+                   (HOL4.list.APPEND (l1 : A HOL4.list.list)
+                      (l2 : A HOL4.list.list)) =
+                 HOL4.list.APPEND
+                   (HOL4.list.REVERSE (l2 : A HOL4.list.list))
+                   (HOL4.list.REVERSE (l1 : A HOL4.list.list))))
+  {(1) (2) (3) (4) (5) (6) (7) (8) (10)}
+    |- HOL4.bool.!
+         (\(l1 : A HOL4.list.list).
+            HOL4.bool.!
+              (\(l2 : A HOL4.list.list).
+                 HOL4.bool.!
+                   (\(l3 : A HOL4.list.list).
+                      HOL4.list.APPEND (l1 : A HOL4.list.list)
+                        (HOL4.list.APPEND (l2 : A HOL4.list.list)
+                           (l3 : A HOL4.list.list)) =
+                      HOL4.list.APPEND
+                        (HOL4.list.APPEND (l1 : A HOL4.list.list)
+                           (l2 : A HOL4.list.list))
+                        (l3 : A HOL4.list.list))))
+Inference rules:
+eqMp ............ 159
+subst ........... 105
+appThm ........... 99
+deductAntisym .... 97
+betaConv ......... 47
+refl ............. 47
+trans ............ 36
+absThm ........... 21
+assume ........... 16
+sym .............. 14
+axiom ............ 10
+Total ........... 651

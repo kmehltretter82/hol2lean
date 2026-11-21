@@ -1,0 +1,5 @@
+# Expected HOL Light exports recorded before the export experiment.
+# Each sequent has an empty hypothesis set. A is a polymorphic HOL type.
+APPEND_NIL      |- !l:A list. APPEND l [] = l
+APPEND_ASSOC    |- !(l:A list) m n. APPEND l (APPEND m n) = APPEND (APPEND l m) n
+REVERSE_APPEND  |- !(l:A list) m. REVERSE (APPEND l m) = APPEND (REVERSE m) (REVERSE l)
